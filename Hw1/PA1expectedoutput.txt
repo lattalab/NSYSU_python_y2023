@@ -1,0 +1,18 @@
+The file "AssignmentGuidlines.txt" contains 100 lines.
+There are 61 sentences and 5320 characters.
+
+The file gives 7 guidance rules:
+  1) Do your homework.
+  2) Submit through the cyberuniversity.
+  3) Do not submit through email.
+  4) Submit on time.
+  5) Name the submitted file exactly as specified in the homework description.
+  6) Test your code before submitting.
+  7) Do not cheat.
+
+There are 894 words.
+But there are only 324 distinct words.
+
+The most common word is "the", which occurs 52 times.
+The next-most-common is "you", which occurs 45 times.
+But if occurances of "your" are included then "you" occurs 64 times in total.

@@ -1,0 +1,100 @@
+This is a large class. Unless each of you follows the rules below, the grading
+work becomes so hard. So I REQUIRE you to FOLLOW THESE RULES.
+
+1) Do your homework.
+   Unlike some classes that you may have be taken, this class has the word
+   programming in its title (Programming in Python). So programming is a
+   significant part of your grade, and you will probably FAIL THE CLASS if
+   you do not do your homework.
+
+2) Submit through the cyberuniversity.
+   Lecture 3 has a description at the end, showing how to upload the homework.
+   These slides cannot be understood from a printout; they must be played to
+   see the animation that explains the uploading process.
+
+3) Do not submit through email.
+   But if you are unable to submit through the cyberuniversity, maybe because
+   you are not yet enrolled, then you may send it to the TA (see Slide 1 of
+   Lecture 1 for his email address). Remeber to attached your file to the
+   email when you send it.
+
+4) Submit on time.
+   Late submissions will be ignored.
+   If you try submitting after the deadline (11:59pm), then the system will
+   not allow you to submit it (at that point you should immediately attached
+   the homework to an email and send it to the TA -- if you wait until the
+   next morning, it will be ignored).
+
+5) Name the submitted file exactly as specified in the homework description.
+   You may reupload, but it will overwrite your first submission. 
+   You must verify that you did successfully submit the file.
+
+6) Test your code before submitting.
+   You must match the basic output described in the homework assignment, or
+   else you will get 0. Of course you must also test other inputs, to get a
+   better score.
+
+7) Do not cheat.
+   You may discuss the assignment with your classmates. Discussion can be
+   quite helpful to your learning -- IF you ONLY talk about the concepts of
+   the assignment. But, if you discuss specific implementation details, then
+   you are not helping others learn; you are just doing their work for them.
+
+   You CANNOT share code. You CANNOT show another student ANY part of your
+   answer to the assignment. You CANNOT let another student look over your
+   shoulder at your code. You CANNOT describe your answer, except in a general
+   way. Think of these assignments as take-home exams.
+
+   You CAN discuss what the assignment requirements are (eg, questions over
+   the meaning of the English). You CAN give general tips on how to implement
+   the assignment. If a student describes to you what is not working in their
+   solution, you CAN give suggestions on how to try to fix it-- but you CANNOT
+   look at their code and debug it for them. Instead, try using a different
+   example that has a similar problem, and then help to debug that example.
+
+   Once again: you CANNOT let a student look over your shoulder when your code
+   is on the screen.
+
+   If students are found to have shared work, they will receive a 0 for this
+   course, or worse. We always look for evidence of cheating, so do not do
+   it. (In any event, even if you do not get caught, a student who copies the
+   homework will not learn the material, so they will fail the exam.)
+
+   Some students have expressed confusion about what constitutes cheating.
+   You really ought to know by your third year of college. But, because the
+   penalties are severe, I understand why some feel cautious.
+
+   Actually, the above discussion contains a good definition of cheating: 
+   copying code or letting someone copy your code. The confusion comes from
+   times when students work together on an assignment. To be clearer: working
+   together on THINKING about an assignment. (But working together ON the
+   assignment would be cheating; these are not group projects.)
+
+   The analogy is identical to a take-home exam. There is no such thing as a
+   group exam, but there is such a thing as a study group. Study groups are
+   good; students learn from each other and end up with a better grasp of the
+   material than if they had worked alone. But groups working together to DO
+   an assignment are bad, because students learn less than they would alone--
+   no learning occurs when you just copy the code from someone else. 
+
+   So: if you do not actually look at code or actually give your code to
+   someone else (electronically, physically, OR verbally), then you are not
+   cheating. 
+
+   Of course, the line blurs a little bit. Suppose your friend asked why his
+   print output had extra commas, and you told him that he needed to splat
+   the argument passed-in to print. In this case you did not cheat, because
+   that type of collaboration falls in the category of studying together, not
+   team-programming. The outcome of such collaboration is increased learning,
+   not decreased learning.
+
+   But it becomes different if your friend asks how to do one of the parts of
+   the homework, and then you show or describe the whole thing. That is a big
+   piece of code. That is doing the assignment for him. Another name for it
+   is cheating. It is not fair to the other students who work on their own. 
+
+   Note that this rule is not limited to literally showing the code, because
+   it is also cheating to DESCRIBE the code so clearly that you might as well
+   have shown it.
+
+   If you have further questions, you may ask me.

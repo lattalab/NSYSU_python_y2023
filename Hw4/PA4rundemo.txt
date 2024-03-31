@@ -1,0 +1,132 @@
+% python3
+Python 3.9.10 (main, Jan 20 2022, 21:37:52)
+[GCC 11.2.0] on cygwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+>>> #This function checks if the passed-in argument string begins with "_":
+>>> def _not(x): return x[0]!="_" and x or ""
+...
+>>> #This creates 3 variables:
+>>> x=y=z=1
+>>>
+>>> #The dir() function list my variables, but also some "_..." things, so:
+>>> print(*map(_not,dir())) #Print all currenty-defined objects:
+        x y z
+>>>
+>>> #So, from the above, we see that the 3 variables I defined do exist.
+>>>
+>>> del x,y
+>>> print(*map(_not,dir())) #Print all currenty-defined objects:
+        z
+>>> del z
+>>>
+>>> #Moving on, let's consider the print function's documentation:
+>>> print(print.__doc__[:35]+")\n") #I just show part of the documentation
+print(value, ..., sep=' ', end='\n')
+
+>>>
+>>> #OK. So far, we've been seeing ordinary behavior. 
+>>> #But now let's run my implementation of your new homework:
+>>> from specialprint import *
+>>> 
+>>> #So what did the above line just import? Let's see our current objects:
+>>> print(*map(_not,dir()))
+        oldprint print
+>>>
+>>> #From the above, we see that there are now two new objects. One of those
+>>> #objects, oldprint, turns out it is just an alias for the built-in print
+>>> print(oldprint.__doc__[:35]+")\n")
+print(value, ..., sep=' ', end='\n')
+
+>>>
+>>> #What's the use of oldprint? Well, let's see the other object, print:
+>>> print(print.__doc__[:70])
+This version of print adds two features, for counting and statistics.
+
+>>> #So this newly imported object, print, is a user-defined function that
+>>> #has replaced the built-in function, print. (But we can still access the
+>>> #original built-in function, print, through our new variable, oldprint.)
+>>> 
+>>>
+>>> #Let's see what the full doc string for your homework's function is:
+>>> print(print.__doc__)
+This version of print adds two features, for counting and statistics.
+
+To use the counting feature, call print with a "count=True" argument.
+The counter has several operating modes:
+ - If no "counter" variable is passed-in, a default counter is used.
+ - Otherwise, counter must be a list containing only an integer.
+ - Also, to reset the conter back to 0, pass in "reset=True".
+   Furthermore, if the only argument is "reset=True", nothing prints.
+
+To use the statistics feature, call print with a "stats=True" argument.
+In this case, no other arguments are allowed. It will display:
+ - How many times print has been called (since importing this version).
+ - How many times a counter was printed.
+ - How many times a counter was reset.
+ - How many times statistics were printed (including the current one).
+>>>
+>>>
+>>> #So let's try to use print, and see whether it does what the above
+>>> #documentation says it should do:
+>>>
+>>> print(reset=True)
+>>> print(reset=True)
+>>> print(stats=True)
+# prints: 3     # with counter: 0       # resets: 2     # statistics: 1
+>>> print(stats=True)
+# prints: 4     # with counter: 0       # resets: 2     # statistics: 2
+>>> print(6)
+6
+>>> print(6)
+6
+>>> print([7],count=True)
+(1) [7]
+>>> print([7],count=True)
+(2) [7]
+>>> print(count=True)
+(3)
+>>> print(reset=True)
+>>> print([7],count=True)
+(1) [7]
+>>> print([7],count=True)
+(2) [7]
+>>> print([7],count=True,reset=True)
+(1) [7]
+>>> print(stats=True)
+# prints: 14    # with counter: 6       # resets: 4     # statistics: 3
+>>> print(counter=[7],count=True)
+(8)
+>>> print(counter=[7],count=True)
+(8)
+>>> counter=[0]
+>>> print(counter=counter,count=True)
+(1)
+>>> print(counter=counter,count=True)
+(2)
+>>> print(count=True)
+(2)
+>>> print(count=True)
+(3)
+>>> print(count=True)
+(4)
+>>> print(counter=counter,count=True)
+(3)
+>>> print(stats=True)
+# prints: 23    # with counter: 14      # resets: 4     # statistics: 4
+>>>
+>>> print(reset=True)
+>>> print(*"hello",count=1)
+(1) h, e, l, l, o
+>>> print(*"hello")
+h e l l o
+>>> print(*"hello",count=1)
+(2) h, e, l, l, o
+>>> print(*"hello",count=1,sep=" ")
+(3) h e l l o
+>>> print(*"hello",count=1,sep="",end="!\n")
+(4) hello!
+>>>
+>>>
+>>> #Yes, the above behavior all matches to the doc string.
+

@@ -1,0 +1,38 @@
+Programming Assignment #1 is due on March 14th, at 11:59pm.
+
+It will be submitted through the cyberuniversity, and Lecture 3 will contain
+slides at the end to discuss the upload procedure.
+
+In this homework, you must follow the instructions, which only allows you to
+use concepts taught in the first two lectures.
+
+Attached to this posting are 4 files:
+   AssignmentGuidelines.txt
+   PA1expectedoutput.txt
+   PA1template.py
+   PA1description.txt
+
+One of these files, "PA1description.txt", is a copy of the text you are now
+reading.
+
+Another of these files, "AssignmentGuidelines.txt", contains important rules
+about doing assignments and submitting assignments. You should read it.
+Also, this file is, in the present homework, being used as the input file.
+
+Another of the files, "PA1expectedoutput.txt", shows you the expected output.
+Your grade will be based on how well your output matches to this expected
+output (and also on whether you followed any stated REQUIREMENTS for specific
+code lines). In addition, to get a perfect score, your code will also need
+to match to the TA's output after he modifies the input file.
+
+The final final, "PA1template.py", is a template with certain areas that are
+each indicated with a "...".  These are the areas that you need to replace
+with your solutions. The comments above each these area discuss what the ...
+should do. The comments also contain hints and requirements. It will be hard
+to understand the "PA1template.py" file, unless you first print-out the
+"PA1expectedoutput.txt" file and then compare the two files, line-by-line.
+So for each "print" statement in "PA1template.py", try to locate what line(s)
+of "PA1expectedoutput.txt" comes from that print.
+
+Please start the assignment early, because some parts of the assignment are
+not easy.

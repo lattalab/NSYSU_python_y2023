@@ -1,0 +1,184 @@
+# In the text below, all of the #... comments were added by me after the runs were finished; the
+# actual game does not print any #s.
+
+# 找到能配對的up & down ,將給定順序做法的level後的bits還原回去
+
+% python3 UpDnTA.py
+        0: turnaround #There are always 4 ups, 4 downs, and 2 turnarounds, so 10 functions in all.
+        1: turnaround #But the order of printing the 10 functions changes each time Python is run.
+        2: up         #Each of the 10 functions operates on 5 random bins (out of 10 total bins)
+        3: down       #Let B1a = such a random set of bins. 
+	4: down       #Then define B1b to be the remaining bins (thus, B1a + B1b = all 10 bins).
+	5: up         #Let B2a = another random set of 5 bins, with B2b being the remaining 5.
+        6: up         #Let B3a = another random set of 5 bins, with B3b being the remaining 5.
+        7: down       #What do the 4 ups do? The 4 ups increment the 4 bin sets (B1a,B1b,B2a,B2b).
+        8: down       #Likewise, the 4 downs decrement the 4 bin sets (B1a,B1b,B2a,B2b).
+        9: up         #The 2 turnarounds invert the 2 nin sets B3a and B3b.
+
+                      #The bins start out all having values of 0.(一開始都是0)
+        4, 1, 9       #Then, in this easy level, 3 transformations are performed: 4 then 1 then 9.
+                      #That is: A down, Then a turnaround, Then an up. But which 5 bins for each?
+
+
+  1   2   3   4   5   6   7   8   9  10   
+  0   0   0   0   0   0   0   2   0   0    #These are the current bin values. Bin 8 needs to be 0.
+
+Press a key from 0 to 9 (or 'R' to Reset): 9 #I type 9, since it was the last of the 3 transforms.
+  1   2   3   4   5   6   7   8   9  10      #(Look back 8 lines in this file to see "4, 1, 9".)
+  0   0   0   0   1   1   1   3   1   0      #Here we determine it increments bins 5, 6, 7, 8, & 9
+
+Press a key from 0 to 9 (or 'R' to Reset): 3 #Now there are 4 downs, and I need to find which of
+  1   2   3   4   5   6   7   8   9  10      #those 4 decrements the same 5 bins. I try 3 first.
+ -1  -1   0   0   0   1   0   2   1   0      #And I learn that it decrements the wrong bins.
+
+Press a key from 0 to 9 (or 'R' to Reset): 4 #So I try 4. (Because I know the downs are 3,4,7,8).
+  1   2   3   4   5   6   7   8   9  10
+ -1  -1   0   0  -1   0  -1   1   0   0      #This decrements the same 5 bins that 9 increments!
+
+Press a key from 0 to 9 (or 'R' to Reset): r #So now I can do a reset and I know that this time
+        0: turnaround                        #I can use 4 to undo the 9.
+        1: turnaround
+        2: up
+        3: down
+        4: down
+        5: up
+        6: up
+        7: down
+        8: down
+        9: up
+
+        4, 1, 9                              #Now I notice that 1 comes before 9...
+                                             #And, looking above, 1 is a turnaround function.
+                                             #So, if you think about it, doing a 1 will undo a 1.
+
+  1   2   3   4   5   6   7   8   9  10
+  0   0   0   0   0   0   0   2   0   0
+
+Press a key from 0 to 9 (or 'R' to Reset): 4 #I do the 4 to undo the 9...
+  1   2   3   4   5   6   7   8   9  10
+  0   0   0   0  -1  -1  -1   1  -1   0
+
+Press a key from 0 to 9 (or 'R' to Reset): 1 #I then do a 1 to undo the 1.
+  1   2   3   4   5   6   7   8   9  10
+  0   0   0   0  -1  -1  -1  -1  -1   0      #What we need now is a function to increment bins 5-9
+
+Press a key from 0 to 9 (or 'R' to Reset): 9 #But, looking above, we already know that is a 9.
+
+
+  0   0   0   0   0   0   0   0   0   0!     #So we have won.
+
+%
+% python3 UpDnTA.py                          #When we rerun, the 10 functions will print in a
+        0: up                                #different order...
+        1: up
+        2: down
+        3: down
+        4: turnaround
+        5: turnaround
+        6: up
+        7: down
+        8: down
+        9: up
+
+        9, 2, 5                             #And the three transformations are different...
+                                            #This time it is 9 (an up), then 2 (a down), then
+                                            #5 (a turn around).
+
+
+
+  0   0   0   0   0   0   0   0   0   0!    #And the game is already over! How? The 9 & 2 must've
+                                            #been opposites, so the turnaround inverted all 0s.
+%
+% python3 UpDnTA.py
+        0: down
+        1: turnaround
+        2: down
+        3: up
+        4: up
+        5: down
+        6: up
+        7: turnaround
+        8: down
+        9: up
+
+        5, 6, 5                            #A down, an up, and then the same down again...
+
+
+
+  1   2   3   4   5   6   7   8   9  10
+ -1   0   0  -1   0  -1  -1   0   0  -1    #There are 5 -1s! Think about it... 
+                                           #Conclusion: The 6 must be the opposite of the 5.
+Press a key from 0 to 9 (or 'R' to Reset): 6
+
+
+  0   0   0   0   0   0   0   0   0   0!
+
+%
+% python3 UpDnTA.py
+        0: up
+        1: turnaround
+        2: up
+        3: down
+        4: turnaround
+        5: up
+        6: down
+        7: up
+        8: down
+        9: down
+
+        9, 1, 9                          #Again we got lucky because we have two 9s and one
+                                         #turnaround. We just need to know up undoes 9...
+
+
+  1   2   3   4   5   6   7   8   9  10
+ -2   0   0   0   0   0   0   0   0  -2
+
+Press a key from 0 to 9 (or 'R' to Reset): 9 #We see that 9 decrements bins 1, 2, 3, 5, and 10.
+  1   2   3   4   5   6   7   8   9  10
+ -3  -1  -1   0  -1   0   0   0   0  -3
+
+Press a key from 0 to 9 (or 'R' to Reset): 0 #Does the up at row 0 increment those 5 bins?
+  1   2   3   4   5   6   7   8   9  10
+ -3  -1  -1   1  -1   1   1   1   1  -3      #No it doesn't.
+
+Press a key from 0 to 9 (or 'R' to Reset): 2 #Does the up at row 2 increment those 5 bins?
+  1   2   3   4   5   6   7   8   9  10
+ -2  -1   0   2   0   1   1   1   2  -3      #No it doesn't.
+
+Press a key from 0 to 9 (or 'R' to Reset): 5 #Does the up at row 5 increment those 5 bins?
+  1   2   3   4   5   6   7   8   9  10
+ -1   0   1   2   1   1   1   1   2  -2      #Yes, it does.
+
+Press a key from 0 to 9 (or 'R' to Reset): r #So now we can reset and solve it...
+        0: up
+        1: turnaround
+        2: up
+        3: down
+        4: turnaround
+        5: up
+        6: down
+        7: up
+        8: down
+        9: down
+
+        9, 1, 9
+
+
+
+  1   2   3   4   5   6   7   8   9  10
+ -2   0   0   0   0   0   0   0   0  -2
+
+Press a key from 0 to 9 (or 'R' to Reset): 5 #5 undoes the 9.
+  1   2   3   4   5   6   7   8   9  10
+ -1   1   1   0   1   0   0   0   0  -1
+
+Press a key from 0 to 9 (or 'R' to Reset): 1 #1 undoes itself.
+  1   2   3   4   5   6   7   8   9  10
+ -1  -1  -1   0  -1   0   0   0   0  -1
+
+Press a key from 0 to 9 (or 'R' to Reset): 5 #Another 5 undoes the first 9.
+
+
+  0   0   0   0   0   0   0   0   0   0!
+
+%
